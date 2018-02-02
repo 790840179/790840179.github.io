@@ -4,6 +4,9 @@
     <title><![CDATA[CodingGit]]></title>
     <url>%2F2018%2F02%2F01%2FcodingGit%2F</url>
     <content type="text"><![CDATA[git config –global core.autocrlf false 用户信息配置git config –global user.name “zhouguang9” git config –global user.email “790840179@qq.com” 1.网络下载至新文件夹git clone https://git.coding.net/narisolar/apogee.git git branch zhouguang 新建本地分支zhouguang 2.网络下载项目并与本地项目合并git checkout master 切换至本地master git pull 将网络master拉至本地master git checkout zhouguang 切换至本地zhouguang 方案一：git push origin zhouguang:zhouguang 网络zhouguang没有建立，现在建立并上传本地zhouguang至网络zhouguang 方案二： //git pull git branch –set-upstream-to=origin/zhouguang zhouguang 本地zhouguang与远程zhouguang联系 git pull 将网络zhouguang拉至本地zhouguang git merge master 将本地master(已经将网络master拉下来的)与zhouguang合并 3.上传本地项目至网络分支zhouguanggit status 上传 git add . git commit -m “代码备注” git push origin zhouguang //origin是服务器zhouguang是分支 4.合并到网络分支mastergit checkout master git merge zhouguang git push]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
