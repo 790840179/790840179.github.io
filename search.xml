@@ -62,6 +62,9 @@
     <title><![CDATA[git常用命令]]></title>
     <url>%2F2018%2F02%2F01%2Fgit%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[用户信息配置12$ git config --global user.name "zhouguang9"$ git config --global user.email "790840179@qq.com" 网络下载至新文件夹123$ git clone https://git.coding.net/narisolar/apogee.git$ git branch zhouguang //新建本地分支zhouguang 网络下载项目并与本地项目合并123456$ git checkout master //切换至本地master$ git pull //将网络master拉至本地master$ git checkout zhouguang //切换至本地zhouguang 方案一：12$ git push origin zhouguang:zhouguang//网络zhouguang没有建立，现在建立并上传本地zhouguang至网络zhouguang 方案二：1234567$ git pull(可不操作)$ git branch --set-upstream-to=origin/zhouguang zhouguang //本地zhouguang与远程zhouguang联系$ git pull//将网络zhouguang拉至本地zhouguang$ git merge master//将本地master(已经将网络master拉下来的)与zhouguang合并 上传本地项目至网络分支zhouguang12345$ git status$ git add .$ git commit -m "代码备注"$ git push origin zhouguang //origin是服务器zhouguang是分支 合并到网络分支master123$ git checkout master$ git merge zhouguang$ git push]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
       <tags>
         <tag>git</tag>
       </tags>
