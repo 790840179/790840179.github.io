@@ -116,7 +116,7 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/20/161117c7293a169d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/20/161117c72acc46d2?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/20/161117c7492a1849?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
-<meta property="og:updated_time" content="2018-02-07T01:31:21.245Z">
+<meta property="og:updated_time" content="2018-02-08T02:54:42.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo基础配置和日常使用">
 <meta name="twitter:description" content="使用Github Pages 可以绑定你的域名(但暂时貌似只能绑定一个)。 简单快捷，使用Github Pages可以为你提供一个免费的服务器，免去了自己搭建服务器和写数据库的麻烦。  安装Node.js在 Windows 环境下安装 Node.js 非常简单，仅须到官网下载安装文件并执行即可完成安装。像我的是Windows 64位，直接下载安装，无脑下一步就行了，不需要配置环境变量。 安装Git">
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,903
+                  2,955
                 </span>
               
 
@@ -438,7 +438,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  12
                 </span>
               
             </div>
@@ -529,6 +529,8 @@
 <p>执行完之后会让你输入github的账号和密码，输入完后就可以登录我们自己的部署在Github Pages服务器上的博客了。对应的地址是 username.github.io(我的是：ryanlijianchang.github.io)。</p>
 <p>假如这时候，报错 <code>ERROR Deployer not found: git</code>，那么就是你的deployer没有安装成功，你需要执行如下命令再安装一次：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy的type的github需要改为git</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">检查是否在环境变量path中配置了git的路径</span><br><span class="line">如：</span><br><span class="line">D:\program files\Git\bin; </span><br><span class="line">D:\program files\Git\mingw64\libexec\git-core;</span><br></pre></td></tr></table></figure>
 <p>这样，你再执行<code>hexo g -d</code>，你的博客就部署到Github上了。</p>
 <h4 id="在浏览器上输入自己的主页地址"><a href="#在浏览器上输入自己的主页地址" class="headerlink" title="在浏览器上输入自己的主页地址"></a>在浏览器上输入自己的主页地址</h4><p>在浏览器上输入Github Pager为我们生成的外链（例如我的是：<a href="https://link.juejin.im/?target=https%3A%2F%2Fryanlijianchang.github.io%2F" target="_blank" rel="noopener">ryanlijianchang.github.io/</a>，而你的只需要把你的github用户名替换掉这个链接中的ryanlijianchang，因为我的用户名是这个，那么你自己的专属博客地址就是：<a href="https://link.juejin.im/?target=https%3A%2F%2F%5B%E6%82%A8%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%5D.github.io%2F%EF%BC%89%E5%8D%B3%E5%8F%AF%E7%9C%8B%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%BA%86%E3%80%82" target="_blank" rel="noopener">https://[您的用户名].github.io/）即可看到自己的博客了。</a></p>
 <p>当然，每一个人都可以通过这个地址访问到你的博客了。</p>
@@ -743,7 +745,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -765,7 +767,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
