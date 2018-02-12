@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ECharts,地图," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ECharts内置地图瞄点初始准备新建html首先，新建项目目录 echartsMapDemo，在其中新建一个 html 文件 index.html。 echartsMapDemo/index.html: 123456789&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;      &amp;lt;meta charset=">
+<meta name="keywords" content="ECharts,地图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECharts地图瞄点">
+<meta property="og:url" content="https://github.com/790840179/2018/02/12/ECharts地图瞄点/index.html">
+<meta property="og:site_name" content="ZhouGuang&#39;s Notes">
+<meta property="og:description" content="ECharts内置地图瞄点初始准备新建html首先，新建项目目录 echartsMapDemo，在其中新建一个 html 文件 index.html。 echartsMapDemo/index.html: 123456789&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;      &amp;lt;meta charset=">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://echarts.baidu.com/blog/images/post/2016-04-28-echarts-map-tutorial-china-js-1.png">
+<meta property="og:image" content="http://echarts.baidu.com/blog/images/post/2016-04-28-echarts-map-tutorial-china-js-2.png">
+<meta property="og:image" content="http://echarts.baidu.com/blog/images/post/2016-04-28-echarts-map-tutorial-scatter-1.png">
+<meta property="og:image" content="http://echarts.baidu.com/blog/images/post/2016-04-28-echarts-map-tutorial-china-js-2.png">
+<meta property="og:image" content="http://echarts.baidu.com/blog/images/post/2016-06-13-bmap-1.png">
+<meta property="og:image" content="http://echarts.baidu.com/blog/images/post/2016-06-13-bmap-2.png">
+<meta property="og:image" content="http://echarts.baidu.com/blog/images/post/2016-06-13-bmap-3.png">
+<meta property="og:image" content="http://echarts.baidu.com/blog/images/post/2016-06-13-bmap-4.png">
+<meta property="og:updated_time" content="2018-02-12T02:38:34.404Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ECharts地图瞄点">
+<meta name="twitter:description" content="ECharts内置地图瞄点初始准备新建html首先，新建项目目录 echartsMapDemo，在其中新建一个 html 文件 index.html。 echartsMapDemo/index.html: 123456789&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;&amp;lt;head&amp;gt;      &amp;lt;meta charset=">
+<meta name="twitter:image" content="http://echarts.baidu.com/blog/images/post/2016-04-28-echarts-map-tutorial-china-js-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.com/790840179/2018/02/12/ECharts地图瞄点/"/>
+
+
+
+
+
+  <title>ECharts地图瞄点 | ZhouGuang's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/790840179"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZhouGuang's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Qucik note</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://github.com/790840179/2018/02/12/ECharts地图瞄点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhouGuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/onepiece.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZhouGuang's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ECharts地图瞄点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-12T09:22:21+08:00">
+                2018-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/12/ECharts地图瞄点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/12/ECharts地图瞄点/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,743
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  18
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="ECharts内置地图瞄点"><a href="#ECharts内置地图瞄点" class="headerlink" title="ECharts内置地图瞄点"></a>ECharts内置地图瞄点</h2><h3 id="初始准备"><a href="#初始准备" class="headerlink" title="初始准备"></a>初始准备</h3><h4 id="新建html"><a href="#新建html" class="headerlink" title="新建html"></a>新建html</h4><p>首先，新建项目目录 echartsMapDemo，在其中新建一个 html 文件 <code>index.html</code>。</p>
+<p>echartsMapDemo/index.html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">      &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">      &lt;title&gt;ECharts map Demo&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="引入echarts文件"><a href="#引入echarts文件" class="headerlink" title="引入echarts文件"></a>引入echarts文件</h4><p>从 <a href="http://echarts.baidu.com/download.html" target="_blank" rel="noopener">echarts官网</a> 下载最新完整开发包（目前最新版本是3.1.4）。</p>
+<p>将下载好的包放置在 <code>echartsMapDemo/dep</code> 目录下并在 html 中以 script 标签引入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;ECharts map Demo&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script src=&quot;/dep/echarts.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="创建图标容器"><a href="#创建图标容器" class="headerlink" title="创建图标容器"></a>创建图标容器</h4><p>在 html 中定义一个 div 作为地图的容器，高度设为 500px 。别忘了，<strong>一定要保证容器高度不为 0</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;ECharts map Demo&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;map-wrap&quot; style=&quot;height: 500px;&quot;&gt;</span><br><span class="line">        &lt;!-- 这里以后是地图 --&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script src=&quot;/dep/echarts.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>然后，我们还需要一个地图文件，echart 提供两种格式的地图数据，一种是 js 格式，一种是 JSON 格式。下文中我们会分别使用这两种方式实现。</p>
+<p>同样去 <a href="http://echarts.baidu.com/download-map.html" target="_blank" rel="noopener">官网</a> 上下载，这里选择下载中国地图 china.js 或 china.json 。你也可以根据需要选择其他省份地图或世界地图</p>
+<p>好了，准备工作完成，现在就开始绘制地图了~</p>
+<h3 id="绘制地图"><a href="#绘制地图" class="headerlink" title="绘制地图"></a>绘制地图</h3><p>echarts 提供两种格式的地图数据，一种是 js 格式，一种是 JSON 格式。下面分别介绍两种格式的用法：</p>
+<h3 id="引用js格式地图数据"><a href="#引用js格式地图数据" class="headerlink" title="引用js格式地图数据"></a>引用js格式地图数据</h3><p>1.在<a href="http://echarts.baidu.com/download-map.html" target="_blank" rel="noopener">官网</a>上下载 js 格式中国地图 china.js，将下载好的 china.js 放在 <code>echartsMapDemo/map/js</code> 目录下，以 script 标签引入到 html 中:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;ECharts map Demo&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;map-wrap&quot; style=&quot;height: 500px;&quot;&gt;</span><br><span class="line">        &lt;!-- 这里以后是地图 --&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script src=&quot;/dep/echarts.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;/map/js/china.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>2.在js中用 <code>echarts.init()</code> 方法初始化一个 ECharts 实例，在 init() 中传入图表容器 Dom 对象，</p>
+<p>同时定义一个变量 <code>option</code>，作为图表的配置项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 初始化echarts示例mapChart</span><br><span class="line">var mapChart = echarts.init(document.getElementById(&apos;map-wrap&apos;));</span><br><span class="line">// mapChart的配置</span><br><span class="line">var option = &#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>3.通过配置 option，新建一个地理坐标系 <code>geo</code> ，地图类型为中国地图。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var option = &#123;</span><br><span class="line">    geo: &#123;</span><br><span class="line">          map: &apos;china&apos;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>geo.map 属性定义该地理坐标系中的地图数据，这里我们要用 china.js ，设置map值为 ‘china’。</p>
+<p><strong>这里需要注意，中国地图的map值为 ‘china’ ，世界地图的map值为 ‘world’ ，但如果要引用省市自治区地图 map 值为简体中文，例如 beijing.js，map 值为’北京’。</strong></p>
+<p>4.调用 <code>setOption(option)</code> 为图表设置配置项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mapChart.setOption(option);</span><br></pre></td></tr></table></figure>
+<p>完整示例代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; style=&quot;height: 100%&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;天津地图1&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body style=&quot;height: 100%; margin: 0&quot;&gt;</span><br><span class="line">	&lt;div id=&quot;main&quot; style=&quot;height: 100%&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;js/echarts4.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;js/tianjin.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        var dom = document.getElementById(&quot;main&quot;);</span><br><span class="line">        var myChart = echarts.init(dom);</span><br><span class="line">        var app = &#123;&#125;;</span><br><span class="line">        option = null;</span><br><span class="line">        var data = [</span><br><span class="line">            &#123;name: &apos;宁河&apos;, value: 59&#125;,</span><br><span class="line">            &#123;name: &apos;蓟县&apos;, value: 125&#125;,</span><br><span class="line">            &#123;name: &apos;宝坻&apos;, value: 112&#125;,</span><br><span class="line">            &#123;name: &apos;天津&apos;, value: 152&#125;,</span><br><span class="line">            &#123;name: &apos;武清&apos;, value: 226&#125;,</span><br><span class="line">            &#123;name: &apos;静海&apos;, value: 142&#125;</span><br><span class="line">        ];</span><br><span class="line">        var geoCoordMap = &#123;</span><br><span class="line">            &apos;宁河&apos;:[117.83,39.33],</span><br><span class="line">            &apos;蓟县&apos;:[117.40,40.05],</span><br><span class="line">            &apos;宝坻&apos;:[117.30,39.75],</span><br><span class="line">            &apos;天津&apos;:[117.20,39.13],</span><br><span class="line">            &apos;武清&apos;:[117.05,39.40],</span><br><span class="line">            &apos;静海&apos;:[116.92,38.93]</span><br><span class="line">        &#125;;</span><br><span class="line">        var convertData = function (data) &#123;</span><br><span class="line">            var res = [];</span><br><span class="line">            for (var i = 0; i &lt; data.length; i++) &#123;</span><br><span class="line">                var geoCoord = geoCoordMap[data[i].name];</span><br><span class="line">                if (geoCoord) &#123;</span><br><span class="line">                    res.push(&#123;</span><br><span class="line">                        name: data[i].name,</span><br><span class="line">                        value: geoCoord.concat(data[i].value)</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return res;</span><br><span class="line">        &#125;;</span><br><span class="line">        option = &#123;</span><br><span class="line">            backgroundColor: &apos;#404a59&apos;,</span><br><span class="line">            title: &#123;</span><br><span class="line">                text: &apos;天津地图1&apos;,</span><br><span class="line">                // subtext: &apos;测试示例&apos;,</span><br><span class="line">                // sublink: &apos;http://www.pm25.in&apos;,</span><br><span class="line">                left: &apos;center&apos;,</span><br><span class="line">                textStyle: &#123;</span><br><span class="line">                    color: &apos;#fff&apos;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            tooltip : &#123;</span><br><span class="line">                trigger: &apos;item&apos;</span><br><span class="line">            &#125;,</span><br><span class="line">            legend: &#123;</span><br><span class="line">                orient: &apos;vertical&apos;,</span><br><span class="line">                y: &apos;bottom&apos;,</span><br><span class="line">                x:&apos;right&apos;,</span><br><span class="line">                data:[&apos;pm2.5&apos;],</span><br><span class="line">                textStyle: &#123;</span><br><span class="line">                    color: &apos;#fff&apos;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            geo: &#123;</span><br><span class="line">                // map: &apos;china&apos;,</span><br><span class="line">                map: &apos;天津&apos;,</span><br><span class="line">                label: &#123;</span><br><span class="line">                    emphasis: &#123;</span><br><span class="line">                        show: false</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                roam: true,</span><br><span class="line">                itemStyle: &#123;</span><br><span class="line">                    normal: &#123;</span><br><span class="line">                        areaColor: &apos;#323c48&apos;,</span><br><span class="line">                        borderColor: &apos;#111&apos;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    emphasis: &#123;</span><br><span class="line">                        areaColor: &apos;#2a333d&apos;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            series : [</span><br><span class="line">                &#123;</span><br><span class="line">                    name: &apos;pm2.5&apos;,</span><br><span class="line">                    type: &apos;scatter&apos;,</span><br><span class="line">                    // coordinateSystem: &apos;bmap&apos;,</span><br><span class="line">                    coordinateSystem: &apos;geo&apos;,</span><br><span class="line">                    data: convertData(data),</span><br><span class="line">                    symbolSize: function (val) &#123;</span><br><span class="line">                        return val[2] / 10;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    label: &#123;</span><br><span class="line">                        normal: &#123;</span><br><span class="line">                            formatter: &apos;&#123;b&#125;&apos;,</span><br><span class="line">                            position: &apos;right&apos;,</span><br><span class="line">                            show: false</span><br><span class="line">                        &#125;,</span><br><span class="line">                        emphasis: &#123;</span><br><span class="line">                            show: true</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    itemStyle: &#123;</span><br><span class="line">                        normal: &#123;</span><br><span class="line">                            color: &apos;#ddb926&apos;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    name: &apos;Top 5&apos;,</span><br><span class="line">                    type: &apos;effectScatter&apos;,</span><br><span class="line">                    // coordinateSystem: &apos;bmap&apos;,</span><br><span class="line">                    coordinateSystem: &apos;geo&apos;,</span><br><span class="line">                    data: convertData(data.sort(function (a, b) &#123;</span><br><span class="line">                        return b.value - a.value;</span><br><span class="line">                    &#125;).slice(0, 6)),</span><br><span class="line">                    symbolSize: function (val) &#123;</span><br><span class="line">                        return val[2] / 10;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    // showEffectOn: &apos;emphasis&apos;,</span><br><span class="line">                    showEffectOn: &apos;render&apos;,</span><br><span class="line">                    rippleEffect: &#123;</span><br><span class="line">                        brushType: &apos;stroke&apos;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    hoverAnimation: true,</span><br><span class="line">                    label: &#123;</span><br><span class="line">                        normal: &#123;</span><br><span class="line">                            formatter: &apos;&#123;b&#125;&apos;,</span><br><span class="line">                            position: &apos;right&apos;,</span><br><span class="line">                            show: true</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    itemStyle: &#123;</span><br><span class="line">                        normal: &#123;</span><br><span class="line">                            color: &apos;#f4e925&apos;,</span><br><span class="line">                            shadowBlur: 10,</span><br><span class="line">                            shadowColor: &apos;#333&apos;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    zlevel: 1</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;;</span><br><span class="line">        if (option &amp;&amp; typeof option === &quot;object&quot;) &#123;</span><br><span class="line">            myChart.setOption(option, true);</span><br><span class="line">        &#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="引用json格式地图数据"><a href="#引用json格式地图数据" class="headerlink" title="引用json格式地图数据"></a>引用json格式地图数据</h3><p>1.同样在<a href="http://echarts.baidu.com/download-map.html" target="_blank" rel="noopener">官网</a>下载json格式的地图数据，放在<code>echartsMapDemo/map/json</code>目录下</p>
+<p>2.json数据通过异步方式加载，加载完成后需要手动注册地图</p>
+<p>这里我们使用 jQuery 的 $.get() 方法异步加载 china.json （首先要在html中引用 jquery ，这里省略操作说明），在回调函数中，以上述同样的方法初始化一个 mapCharts 、注册地图并设置 option：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.get(&apos;map/json/china.json&apos;, function (chinaJson) &#123;</span><br><span class="line">        echarts.registerMap(&apos;china&apos;, chinaJson); // 注册地图</span><br><span class="line">        var mapChart = echarts.init(document.getElementById(&apos;map-wrap&apos;));</span><br><span class="line">          var option = &#123;</span><br><span class="line">              geo: &#123;</span><br><span class="line">                  map: &apos;china&apos;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        mapChart.setOption(option);</span><br><span class="line">      &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>现在就可以在页面中看到中国地图了：</p>
+<p><img src="http://echarts.baidu.com/blog/images/post/2016-04-28-echarts-map-tutorial-china-js-1.png" alt="地图"></p>
+<p>为了突出瞄点效果，先为地图改个颜色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var option = &#123;</span><br><span class="line">    geo: &#123;</span><br><span class="line">        map: &apos;china&apos;,</span><br><span class="line">        itemStyle: &#123;                    // 定义样式</span><br><span class="line">            normal: &#123;                    // 普通状态下的样式</span><br><span class="line">                areaColor: &apos;#323c48&apos;,</span><br><span class="line">                borderColor: &apos;#111&apos;</span><br><span class="line">            &#125;,</span><br><span class="line">            emphasis: &#123;                    // 高亮状态下的样式</span><br><span class="line">                areaColor: &apos;#2a333d&apos;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    backgroundColor: &apos;#404a59&apos;,          // 图表背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>换装后的地图：</p>
+<p><img src="http://echarts.baidu.com/blog/images/post/2016-04-28-echarts-map-tutorial-china-js-2.png" alt="中国地图底图"></p>
+<h3 id="绘制瞄点图"><a href="#绘制瞄点图" class="headerlink" title="绘制瞄点图"></a>绘制瞄点图</h3><hr>
+<p>1.新建瞄点图series</p>
+<p>在 option 中添加一个 series ， series 的类型为瞄点图 <code>scatter</code> ，坐标系为地理坐标系 <code>geo</code> 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var option = &#123;</span><br><span class="line">    geo: &#123;</span><br><span class="line">          ...</span><br><span class="line">      &#125;,</span><br><span class="line">    backgroundColor: &apos;#404a59&apos;,</span><br><span class="line">    series: [</span><br><span class="line">        &#123;</span><br><span class="line">            name: &apos;销量&apos;, // series名称</span><br><span class="line">            type: &apos;scatter&apos;, // series图表类型</span><br><span class="line">            coordinateSystem: &apos;geo&apos; // series坐标系类型</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.添加数据</p>
+<p>ECharts 中 series.data 是定义图表数据内容的数组，其中每个项数据格式为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    name: &apos;北京&apos;,    // 数据项名称，在这里指地区名称</span><br><span class="line">    value: [        // 数据项值</span><br><span class="line">        116.46,     // 地理坐标，经度</span><br><span class="line">        39.92,      // 地理坐标，纬度</span><br><span class="line">        340         // 北京地区的数值</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先我们将需要渲染的数据转换成上述数据格式，存在一个变量中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var myData = [</span><br><span class="line">    &#123;name: &apos;海门&apos;, value: [121.15, 31.89, 90]&#125;,</span><br><span class="line">    &#123;name: &apos;鄂尔多斯&apos;, value: [109.781327, 39.608266, 120]&#125;,</span><br><span class="line">    &#123;name: &apos;招远&apos;, value: [120.38, 37.35, 142]&#125;,</span><br><span class="line">    &#123;name: &apos;舟山&apos;, value: [122.207216, 29.985295, 123]&#125;,</span><br><span class="line">      ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>然后，将 myData 赋值给 series.data：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var option = &#123;</span><br><span class="line">    geo: &#123;</span><br><span class="line">          ...</span><br><span class="line">      &#125;,</span><br><span class="line">    backgroundColor: &apos;#404a59&apos;,</span><br><span class="line">    series: [</span><br><span class="line">        &#123;</span><br><span class="line">            name: &apos;销量&apos;,</span><br><span class="line">            type: &apos;scatter&apos;,</span><br><span class="line">            coordinateSystem: &apos;geo&apos;,</span><br><span class="line">            data: myData // series数据内容</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>数据添加完成，就可以在图表中看到渲染出的瞄点了：</p>
+<p><img src="http://echarts.baidu.com/blog/images/post/2016-04-28-echarts-map-tutorial-scatter-1.png" alt="散点图1"></p>
+<p>3.添加视觉映射组件</p>
+<p><a href="http://echarts.baidu.com/option.html#visualMap" target="_blank" rel="noopener">视觉映射组件</a>是标识某一数据范围内数据及颜色对应关系的控件，视觉映射组件分为连续型和分段型，这里我们选用连续型 <code>type:continuous</code> 。同时，通过视觉映射组件可以实现 ECharts 值域漫游功能，即通过拖拽控件手柄选择不同数值范围，达到对图表数据的筛选显示。 在 <code>visualMap</code>属性中设置值域控件的相关配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var option = &#123;</span><br><span class="line">    ...</span><br><span class="line">    visualMap: &#123;</span><br><span class="line">        type: &apos;continuous&apos;, // 连续型</span><br><span class="line">        min: 0,               // 值域最小值，必须参数</span><br><span class="line">        max: 200,            // 值域最大值，必须参数</span><br><span class="line">        calculable: true,    // 是否启用值域漫游</span><br><span class="line">        inRange: &#123;</span><br><span class="line">                 color: [&apos;#50a3ba&apos;,&apos;#eac736&apos;,&apos;#d94e5d&apos;]</span><br><span class="line">                             // 指定数值从低到高时的颜色变化</span><br><span class="line">          &#125;,</span><br><span class="line">        textStyle: &#123;</span><br><span class="line">            color: &apos;#fff&apos;    // 值域控件的文本颜色</span><br><span class="line">          &#125;</span><br><span class="line">       	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>添加了值域控件的图表效果：</p>
+<p><img src="http://echarts.baidu.com/blog/images/post/2016-04-28-echarts-map-tutorial-china-js-2.png" alt="瞄点图2"></p>
+<p>这样一个基于中国地图的瞄点图就基本实现了，如果想要继续完善图表，可以为它添加标题，图例，高亮提示等控件，配置方式在这里查看（<a href="http://echarts.baidu.com/option.html#title" target="_blank" rel="noopener">ECharts 配置项手册</a>），在此不再详细说明。</p>
+<p>完整示例代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; style=&quot;height: 100%&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;天津地图2&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body style=&quot;height: 100%; margin: 0&quot;&gt;</span><br><span class="line">	&lt;div id=&quot;main&quot; style=&quot;height: 100%&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-3.3.1.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;js/echarts4.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">       	$.get(&apos;js/tianjin.json&apos;, function(tianjinJson) &#123;</span><br><span class="line">        //echarts.registerMap(&apos;省份汉语名称&apos;, 省份拼音+Json);</span><br><span class="line">       		echarts.registerMap(&apos;天津&apos;, tianjinJson);</span><br><span class="line">		    var myData = [</span><br><span class="line">		    &#123;name: &apos;宁河&apos;, value: 59&#125;,</span><br><span class="line">		    &#123;name: &apos;蓟县&apos;, value: 125&#125;,</span><br><span class="line">		    &#123;name: &apos;宝坻&apos;, value: 112&#125;,</span><br><span class="line">		    &#123;name: &apos;天津&apos;, value: 152&#125;,</span><br><span class="line">		    &#123;name: &apos;武清&apos;, value: 226&#125;,</span><br><span class="line">		    &#123;name: &apos;静海&apos;, value: 142&#125;</span><br><span class="line">			];</span><br><span class="line">			var geoCoordMap = &#123;</span><br><span class="line">			    &apos;宁河&apos;:[117.83,39.33],</span><br><span class="line">			    &apos;蓟县&apos;:[117.40,40.05],</span><br><span class="line">			    &apos;宝坻&apos;:[117.30,39.75],</span><br><span class="line">			    &apos;天津&apos;:[117.20,39.13],</span><br><span class="line">			    &apos;武清&apos;:[117.05,39.40],</span><br><span class="line">			    &apos;静海&apos;:[116.92,38.93]</span><br><span class="line">			&#125;;</span><br><span class="line">			var convertData = function (data) &#123;</span><br><span class="line">			    var res = [];</span><br><span class="line">			    for (var i = 0; i &lt; data.length; i++) &#123;</span><br><span class="line">			        var geoCoord = geoCoordMap[data[i].name];</span><br><span class="line">			        if (geoCoord) &#123;</span><br><span class="line">			            res.push(&#123;</span><br><span class="line">			                name: data[i].name,</span><br><span class="line">			                value: geoCoord.concat(data[i].value)</span><br><span class="line">			            &#125;);</span><br><span class="line">			        &#125;</span><br><span class="line">			    &#125;</span><br><span class="line">			    return res;</span><br><span class="line">			&#125;;</span><br><span class="line">        	var myChart = echarts.init(document.getElementById(&apos;main&apos;));</span><br><span class="line">        	var option = &#123;</span><br><span class="line">        		backgroundColor:&apos;#404a59&apos;,</span><br><span class="line">        		title:&#123;</span><br><span class="line">        			text: &apos;天津地图2&apos;,</span><br><span class="line">        			left:&apos;center&apos;,</span><br><span class="line">        			textStyle:&#123;</span><br><span class="line">        				color:&apos;#fff&apos;</span><br><span class="line">        			&#125;</span><br><span class="line">        		&#125;,</span><br><span class="line">        		tooltip:&#123;</span><br><span class="line">        			trigger:&apos;item&apos;</span><br><span class="line">        		&#125;,</span><br><span class="line">        		legend:&#123;</span><br><span class="line">        			orient:&apos;vertical&apos;,</span><br><span class="line">        			y:&apos;bottom&apos;,</span><br><span class="line">        			x:&apos;right&apos;,</span><br><span class="line">        			textStyle:&#123;</span><br><span class="line">        				color:&apos;#fff&apos;</span><br><span class="line">        			&#125;</span><br><span class="line">        		&#125;,</span><br><span class="line">        		geo: &#123;</span><br><span class="line">        			map: &apos;天津&apos;,</span><br><span class="line">        			label:&#123;</span><br><span class="line">        				emphasis:&#123;</span><br><span class="line">        					show:false</span><br><span class="line">        				&#125;</span><br><span class="line">        			&#125;,</span><br><span class="line">        			roam:true,</span><br><span class="line">        			itemStyle:&#123;</span><br><span class="line">        			 	normal: &#123;					// 普通状态下的样式</span><br><span class="line">                			areaColor: &apos;#323c48&apos;,</span><br><span class="line">                			borderColor: &apos;#111&apos;</span><br><span class="line">            			&#125;,</span><br><span class="line">            			emphasis: &#123;					// 高亮状态下的样式</span><br><span class="line">                			areaColor: &apos;#2a333d&apos;</span><br><span class="line">            				&#125;</span><br><span class="line">        				&#125;</span><br><span class="line">        			&#125;,</span><br><span class="line">        		series:[&#123;</span><br><span class="line">        			name: &apos;销量&apos;, // series名称</span><br><span class="line">					type: &apos;scatter&apos;, // series图表类型</span><br><span class="line">					coordinateSystem: &apos;geo&apos;, // series坐标系类型</span><br><span class="line">					data: convertData(myData),</span><br><span class="line">					symbolSize:function(val)&#123;</span><br><span class="line">						return val[2]/10;</span><br><span class="line">					&#125;,</span><br><span class="line">					label:&#123;</span><br><span class="line">						normal: &#123;</span><br><span class="line">		                    formatter: &apos;&#123;b&#125;&apos;,</span><br><span class="line">		                    position: &apos;right&apos;,</span><br><span class="line">		                    show: false</span><br><span class="line">		                &#125;,</span><br><span class="line">						emphasis:&#123;</span><br><span class="line">							show:true</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;,</span><br><span class="line">					itemStyle: &#123;</span><br><span class="line">                		normal: &#123;</span><br><span class="line">                   			color: &apos;#ddb926&apos;</span><br><span class="line">                			&#125;</span><br><span class="line">            			&#125;</span><br><span class="line">        		&#125;,</span><br><span class="line">        		//新添加</span><br><span class="line">        		&#123;</span><br><span class="line">                    name: &apos;Top 5&apos;,</span><br><span class="line">                    type: &apos;effectScatter&apos;,</span><br><span class="line">                    // coordinateSystem: &apos;bmap&apos;,</span><br><span class="line">                    coordinateSystem: &apos;geo&apos;,</span><br><span class="line">                    //控制放置上面有几个闪烁</span><br><span class="line">                    data: convertData(myData.sort(function (a, b) &#123;</span><br><span class="line">                        return b.value - a.value;</span><br><span class="line">                    &#125;).slice(0, 3)),</span><br><span class="line">                    symbolSize: function (val) &#123;</span><br><span class="line">                        return val[2] / 10;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    // showEffectOn: &apos;emphasis&apos;,</span><br><span class="line">                    showEffectOn: &apos;render&apos;,</span><br><span class="line">                    rippleEffect: &#123;</span><br><span class="line">                        brushType: &apos;stroke&apos;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    hoverAnimation: true,</span><br><span class="line">                    label: &#123;</span><br><span class="line">                        normal: &#123;</span><br><span class="line">                            formatter: &apos;&#123;b&#125;&apos;,</span><br><span class="line">                            position: &apos;right&apos;,</span><br><span class="line">                            show: true</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    itemStyle: &#123;</span><br><span class="line">                        normal: &#123;</span><br><span class="line">                            color: &apos;#f4e925&apos;,</span><br><span class="line">                            shadowBlur: 10,</span><br><span class="line">                            shadowColor: &apos;#333&apos;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    zlevel: 1</span><br><span class="line">                    &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        	myChart.setOption(option);</span><br><span class="line">    	&#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Echarts百度地图瞄点"><a href="#Echarts百度地图瞄点" class="headerlink" title="Echarts百度地图瞄点"></a>Echarts百度地图瞄点</h2><h3 id="初始准备-1"><a href="#初始准备-1" class="headerlink" title="初始准备"></a>初始准备</h3><p>首先要创建 html 和引入 ECharts 包，具体见上。</p>
+<h3 id="引入echarts百度地图扩展包"><a href="#引入echarts百度地图扩展包" class="headerlink" title="引入echarts百度地图扩展包"></a>引入echarts百度地图扩展包</h3><p>在 <a href="https://github.com/ecomfe/echarts/tree/master/extension/bmap">github</a> 上下载 ECharts 扩展 bmap.js，放在 /extension/ 目录下，并引入 html 中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;title&gt;ECharts map Demo&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;map-wrap&quot; style=&quot;height: 500px;&quot;&gt;</span><br><span class="line">        &lt;!-- 这里以后是地图 --&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script src=&quot;/dep/echarts.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;/extension/bmap.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="绘制地图-1"><a href="#绘制地图-1" class="headerlink" title="绘制地图"></a>绘制地图</h3><p>1.在 js 中，新建 ECharts 示例，并为其设置配置项 option：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var bmapChart = echarts.init(document.getElementById(&apos;map-wrap&apos;));</span><br><span class="line">var option = &#123;</span><br><span class="line">    // 这里是 ECharts 的配置项，接下来会说明</span><br><span class="line">&#125;</span><br><span class="line">bmapChart.setOption(option);</span><br></pre></td></tr></table></figure>
+<p>2.添加百度地图：</p>
+<p>在 option 中添加 bmap 相关设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var option = &#123;</span><br><span class="line">    bmap: &#123;</span><br><span class="line">          center: [116.307698, 40.056975], // 中心位置坐标</span><br><span class="line">          zoom: 5, // 地图缩放比例</span><br><span class="line">          roam: true // 开启用户缩放</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>ECharts 将百度地图部分配置集成在了 bmap 中，包括：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>center</td>
+<td>中心点的百度坐标</td>
+<td>坐标数组, 如：[116.307698, 40.056975]</td>
+</tr>
+<tr>
+<td>zoom</td>
+<td>初始缩放比</td>
+<td>number</td>
+</tr>
+<tr>
+<td>roam</td>
+<td>是否允许用户缩放操作</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>mapStyle</td>
+<td>地图自定义样式</td>
+<td>object, 如：{ styleJson: […] }</td>
+</tr>
+</tbody>
+</table>
+<p>这样百度地图就加载到页面中了，这里显示百度地图的默认样式，稍后第四部分将为百度地图添加自定义样式的配置：</p>
+<p><img src="http://echarts.baidu.com/blog/images/post/2016-06-13-bmap-1.png" alt="百度地图1"></p>
+<h3 id="绘制瞄点图-1"><a href="#绘制瞄点图-1" class="headerlink" title="绘制瞄点图"></a>绘制瞄点图</h3><p>绘制瞄点图的方法与上篇中绘制瞄点图方法相同，需要修改的部分是，将瞄点图的坐标系 <code>coordinateSystem</code> 改成使用 bmap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">var myData = [</span><br><span class="line">    &#123;name: &apos;海门&apos;, value: [121.15, 31.89, 90]&#125;,</span><br><span class="line">      &#123;name: &apos;鄂尔多斯&apos;, value: [109.781327, 39.608266, 120]&#125;,</span><br><span class="line">      &#123;name: &apos;招远&apos;, value: [120.38, 37.35, 142]&#125;,</span><br><span class="line">    &#123;name: &apos;舟山&apos;, value: [122.207216, 29.985295, 123]&#125;,</span><br><span class="line">      ...</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">var option = &#123;</span><br><span class="line">    bmap: &#123;</span><br><span class="line">          ...</span><br><span class="line">      &#125;,</span><br><span class="line">      visualMap: &#123;    // 视觉映射组件</span><br><span class="line">        type: &apos;continuous&apos;,</span><br><span class="line">        min: 0,</span><br><span class="line">        max: 200,</span><br><span class="line">        calculable: true,</span><br><span class="line">        inRange: &#123;</span><br><span class="line">                 color: [&apos;#50a3ba&apos;,&apos;#eac736&apos;,&apos;#d94e5d&apos;]</span><br><span class="line">          &#125;,</span><br><span class="line">        textStyle: &#123;</span><br><span class="line">            color: &apos;#fff&apos;</span><br><span class="line">        &#125;</span><br><span class="line">         &#125;</span><br><span class="line">    series: [</span><br><span class="line">        &#123;</span><br><span class="line">            name: &apos;销量&apos;,</span><br><span class="line">            type: &apos;scatter&apos;,</span><br><span class="line">            coordinateSystem: &apos;bmap&apos;, // 坐标系使用bmap</span><br><span class="line">            data: myData</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>绘制瞄点后的百度地图：</p>
+<p><img src="http://echarts.baidu.com/blog/images/post/2016-06-13-bmap-2.png" alt="百度地图2"></p>
+<h3 id="自定义百度地图样式"><a href="#自定义百度地图样式" class="headerlink" title="自定义百度地图样式"></a>自定义百度地图样式</h3><p>地图的样式配置 <code>bmap.mapStyle</code> 中 <code>styleJson</code> 与百度地图内置的样式配置一致，具体参考百度地图API开发指南中 <a href="http://lbsyun.baidu.com/index.php?title=jspopular/guide/custom" target="_blank" rel="noopener">定制个性地图</a> 章节的介绍。</p>
+<p>这里我们设置一个较暗色调的地图,如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">var option = &#123;</span><br><span class="line">        bmap: &#123;</span><br><span class="line">              center: [116.307698, 40.056975],</span><br><span class="line">                 zoom: 5,</span><br><span class="line">                 roam: true, // 允许缩放</span><br><span class="line">                 mapStyle: &#123;  // 百度地图自定义样式</span><br><span class="line">                     styleJson: [</span><br><span class="line">                         // 陆地</span><br><span class="line">                         &#123;</span><br><span class="line">                        &quot;featureType&quot;: &quot;land&quot;,</span><br><span class="line">                          &quot;elementType&quot;: &quot;all&quot;,</span><br><span class="line">                          &quot;stylers&quot;: &#123;</span><br><span class="line">                              &quot;color&quot;: &quot;#073763&quot;</span><br><span class="line">                          &#125;</span><br><span class="line">                      &#125;,</span><br><span class="line">                      // 水系</span><br><span class="line">                      &#123;</span><br><span class="line">                          &quot;featureType&quot;: &quot;water&quot;,</span><br><span class="line">                          &quot;elementType&quot;: &quot;all&quot;,</span><br><span class="line">                          &quot;stylers&quot;: &#123;</span><br><span class="line">                              &quot;color&quot;: &quot;#073763&quot;,</span><br><span class="line">                              &quot;lightness&quot;: -54</span><br><span class="line">                          &#125;</span><br><span class="line">                      &#125;,</span><br><span class="line">                      // 国道与高速</span><br><span class="line">                      &#123;</span><br><span class="line">                          &quot;featureType&quot;: &quot;highway&quot;,</span><br><span class="line">                          &quot;elementType&quot;: &quot;all&quot;,</span><br><span class="line">                          &quot;stylers&quot;: &#123;</span><br><span class="line">                              &quot;color&quot;: &quot;#45818e&quot;</span><br><span class="line">                          &#125;</span><br><span class="line">                      &#125;,</span><br><span class="line">                      // 边界线</span><br><span class="line">                      &#123;</span><br><span class="line">                          &quot;featureType&quot;: &quot;boundary&quot;,</span><br><span class="line">                          &quot;elementType&quot;: &quot;all&quot;,</span><br><span class="line">                          &quot;stylers&quot;: &#123;</span><br><span class="line">                              &quot;color&quot;: &quot;#ffffff&quot;,</span><br><span class="line">                              &quot;lightness&quot;: -62,</span><br><span class="line">                              &quot;visibility&quot;: &quot;on&quot;</span><br><span class="line">                          &#125;</span><br><span class="line">                      &#125;,</span><br><span class="line">                      // 行政标注</span><br><span class="line">                      &#123;</span><br><span class="line">                          &quot;featureType&quot;: &quot;label&quot;,</span><br><span class="line">                          &quot;elementType&quot;: &quot;labels.text.fill&quot;,</span><br><span class="line">                          &quot;stylers&quot;: &#123;</span><br><span class="line">                              &quot;color&quot;: &quot;#ffffff&quot;,</span><br><span class="line">                              &quot;visibility&quot;: &quot;on&quot;</span><br><span class="line">                          &#125;</span><br><span class="line">                      &#125;,</span><br><span class="line">                      &#123;</span><br><span class="line">                          &quot;featureType&quot;: &quot;label&quot;,</span><br><span class="line">                          &quot;elementType&quot;: &quot;labels.text.stroke&quot;,</span><br><span class="line">                          &quot;stylers&quot;: &#123;</span><br><span class="line">                              &quot;color&quot;: &quot;#444444&quot;,</span><br><span class="line">                              &quot;visibility&quot;: &quot;on&quot;</span><br><span class="line">                          &#125;</span><br><span class="line">                      &#125;</span><br><span class="line">                     ]</span><br><span class="line">                 &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          ...</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>实现效果如下图：</p>
+<p><img src="http://echarts.baidu.com/blog/images/post/2016-06-13-bmap-3.png" alt="百度地图3"></p>
+<p>除了上述四个配置，其他地图设置都可以通过 <a href="http://lbsyun.baidu.com/index.php?title=jspopular" target="_blank" rel="noopener">百度地图提供的API</a> 实现</p>
+<p>获取百度地图实例的方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var bmap = bmapCharts.getModel().getComponent(&apos;bmap&apos;).getBMap(); // 百度地图实例</span><br></pre></td></tr></table></figure>
+<p>例如，我们可以为地图添加一个缩放控件和一个比例尺：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bmap.addControl(new BMap.NavigationControl()); // 缩放控件</span><br><span class="line">bmap.addControl(new BMap.ScaleControl()); // 比例尺</span><br></pre></td></tr></table></figure>
+<p><img src="http://echarts.baidu.com/blog/images/post/2016-06-13-bmap-4.png" alt="百度地图4"></p>
+<p>完整示例代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; style=&quot;height: 100%&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;天津地图3&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body style=&quot;height: 100%; margin: 0&quot;&gt;</span><br><span class="line">	&lt;div id=&quot;main&quot; style=&quot;height: 100%&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;!-- 必须有下面一行 --&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=ZUONbpqGBsYGXNIYHicvbAbM&quot;&gt;&lt;/script&gt;</span><br><span class="line">   &lt;script type=&quot;text/javascript&quot; src=&quot;js/echarts4.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">   &lt;script type=&quot;text/javascript&quot; src=&quot;js/bmap.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">   &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        var myChart = echarts.init(document.getElementById(&quot;main&quot;));</span><br><span class="line">        var myData = [</span><br><span class="line">                &#123;name: &apos;宁河&apos;, value: [117.83,39.33]&#125;,</span><br><span class="line">                &#123;name: &apos;蓟县&apos;, value: [117.40,40.05]&#125;,</span><br><span class="line">                &#123;name: &apos;宝坻&apos;, value: [117.30,39.75]&#125;,</span><br><span class="line">                // &#123;name: &apos;天津&apos;, value: [117.20,39.13]&#125;,</span><br><span class="line">                &#123;name: &apos;武清&apos;, value: [117.05,39.40]&#125;,</span><br><span class="line">                &#123;name: &apos;静海&apos;, value: [116.92,38.93]&#125;,</span><br><span class="line">                &#123;name: &apos;天津体育学院&apos;, value: [117.194497,39.080135]&#125;</span><br><span class="line">            ];</span><br><span class="line">        var option=&#123;</span><br><span class="line">            bmap:&#123;</span><br><span class="line">                center:[117.20,39.13],</span><br><span class="line">                zoom:6,</span><br><span class="line">                roam:true</span><br><span class="line">            &#125;,</span><br><span class="line">            visualMap:&#123;</span><br><span class="line">                type:&apos;continuous&apos;,</span><br><span class="line">                min:0,</span><br><span class="line">                max:200,</span><br><span class="line">                calculable:true,</span><br><span class="line">                inRange:&#123;</span><br><span class="line">                    color:[&apos;#ff0000&apos;,&apos;#eac736&apos;,&apos;#d94e5d&apos;]</span><br><span class="line">                &#125;,</span><br><span class="line">                textStyle:&#123;</span><br><span class="line">                    color:&apos;#fff&apos;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            series:[</span><br><span class="line">                &#123;</span><br><span class="line">                    name:&apos;销量&apos;,</span><br><span class="line">                    type:&apos;scatter&apos;,</span><br><span class="line">                    coordinateSystem:&apos;bmap&apos;,</span><br><span class="line">                    data:myData</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;;</span><br><span class="line">        myChart.setOption(option);</span><br><span class="line">   &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+	
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-smile-o"></i>感谢您的阅读-------------</div>
+    
+</div>
+      </div>
+    
+	
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="ZhouGuang 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ECharts/" rel="tag"><i class="fa fa-tag"></i>ECharts</a>
+          
+            <a href="/tags/地图/" rel="tag"><i class="fa fa-tag"></i>地图</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/11/关于JS的Ajax方法导致跨域问题的解决办法1/" rel="next" title="关于JS的Ajax方法导致跨域问题的解决办法1">
+                <i class="fa fa-chevron-left"></i> 关于JS的Ajax方法导致跨域问题的解决办法1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/onepiece.png"
+                alt="ZhouGuang" />
+            
+              <p class="site-author-name" itemprop="name">ZhouGuang</p>
+              <p class="site-description motion-element" itemprop="description">风骚的走位</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.google.cn/" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-spinner"></i>掘金</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECharts内置地图瞄点"><span class="nav-number">1.</span> <span class="nav-text">ECharts内置地图瞄点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始准备"><span class="nav-number">1.1.</span> <span class="nav-text">初始准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建html"><span class="nav-number">1.1.1.</span> <span class="nav-text">新建html</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入echarts文件"><span class="nav-number">1.1.2.</span> <span class="nav-text">引入echarts文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建图标容器"><span class="nav-number">1.1.3.</span> <span class="nav-text">创建图标容器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制地图"><span class="nav-number">1.2.</span> <span class="nav-text">绘制地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用js格式地图数据"><span class="nav-number">1.3.</span> <span class="nav-text">引用js格式地图数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用json格式地图数据"><span class="nav-number">1.4.</span> <span class="nav-text">引用json格式地图数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制瞄点图"><span class="nav-number">1.5.</span> <span class="nav-text">绘制瞄点图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Echarts百度地图瞄点"><span class="nav-number">2.</span> <span class="nav-text">Echarts百度地图瞄点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始准备-1"><span class="nav-number">2.1.</span> <span class="nav-text">初始准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入echarts百度地图扩展包"><span class="nav-number">2.2.</span> <span class="nav-text">引入echarts百度地图扩展包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制地图-1"><span class="nav-number">2.3.</span> <span class="nav-text">绘制地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制瞄点图-1"><span class="nav-number">2.4.</span> <span class="nav-text">绘制瞄点图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义百度地图样式"><span class="nav-number">2.5.</span> <span class="nav-text">自定义百度地图样式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>790840179@qq.com
+  	<i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhouGuang</span>
+
+  
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://ZhouGuang.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://github.com/790840179/2018/02/12/ECharts地图瞄点/';
+          this.page.identifier = '2018/02/12/ECharts地图瞄点/';
+          this.page.title = 'ECharts地图瞄点';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ZhouGuang.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+</html>
