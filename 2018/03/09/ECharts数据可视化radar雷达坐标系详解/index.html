@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ECharts,地图," />
 
 
 
@@ -100,17 +100,18 @@
 
 
 
-<meta name="description" content="风骚的走位">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091mytextStyle=&amp;#123;    color">
+<meta name="keywords" content="ECharts,地图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECharts数据可视化radar雷达坐标系详解">
 <meta property="og:url" content="https://github.com/790840179/2018/03/09/ECharts数据可视化radar雷达坐标系详解/index.html">
 <meta property="og:site_name" content="ZhouGuang&#39;s Notes">
-<meta property="og:description" content="风骚的走位">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091mytextStyle=&amp;#123;    color">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T08:21:43.201Z">
+<meta property="og:updated_time" content="2018-03-13T03:02:40.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECharts数据可视化radar雷达坐标系详解">
-<meta name="twitter:description" content="风骚的走位">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091mytextStyle=&amp;#123;    color">
 
 
 
@@ -358,6 +359,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -390,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1,505
                 </span>
               
 
@@ -406,7 +429,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  6
                 </span>
               
             </div>
@@ -427,7 +450,8 @@
       
 
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">mytextStyle=&#123;</span><br><span class="line">    color:&quot;#333&quot;,                //文字颜色</span><br><span class="line">    fontStyle:&quot;normal&quot;,         //italic斜体  oblique倾斜</span><br><span class="line">    fontWeight:&quot;normal&quot;,        //文字粗细bold   bolder   lighter  100 | 200 | 300 | 400...</span><br><span class="line">    fontFamily:&quot;sans-serif&quot;,    //字体系列</span><br><span class="line">    fontSize:18,                 //字体大小</span><br><span class="line">&#125;;</span><br><span class="line">mylineStyle=&#123;</span><br><span class="line">    color:&quot;#333&quot;,               //颜色，&apos;rgb(128, 128, 128)&apos;，&apos;rgba(128, 128, 128, 0.5)&apos;，支持线性渐变，径向渐变，纹理填充</span><br><span class="line">    shadowColor:&quot;red&quot;,          //阴影颜色</span><br><span class="line">    shadowOffsetX:0,            //阴影水平方向上的偏移距离。</span><br><span class="line">    shadowOffsetY:0,            //阴影垂直方向上的偏移距离</span><br><span class="line">    shadowBlur:10,              //图形阴影的模糊大小。</span><br><span class="line">    type:&quot;solid&quot;,               //坐标轴线线的类型，solid，dashed，dotted</span><br><span class="line">    width:1,                    //坐标轴线线宽</span><br><span class="line">    opacity:1,                  //图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形</span><br><span class="line">&#125;;</span><br><span class="line">myareaStyle=&#123;</span><br><span class="line">    color:[&apos;rgba(250,250,250,0.3)&apos;,&apos;rgba(200,200,200,0.3)&apos;],//分隔区域颜色。分隔区域会按数组中颜色的顺序依次循环设置颜色。默认是一个深浅的间隔色。</span><br><span class="line">    shadowColor:&quot;red&quot;,          //阴影颜色</span><br><span class="line">    shadowOffsetX:0,            //阴影水平方向上的偏移距离。</span><br><span class="line">    shadowOffsetY:0,            //阴影垂直方向上的偏移距离</span><br><span class="line">    shadowBlur:10,              //图形阴影的模糊大小。</span><br><span class="line">    opacity:1,                  //图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">radar=[&#123;</span><br><span class="line">    center:[&apos;50%&apos;, &apos;50%&apos;],      //中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标。支持设置成百分比，设置成百分比时第一项是相对于容器宽度，第二项是相对于容器高度。</span><br><span class="line">    radius:&quot;75%&quot;,               //数组的第一项是内半径，第二项是外半径。支持设置成百分比，相对于容器高宽中较小的一项的一半。</span><br><span class="line">    startAngle:90,              //起始刻度的角度，默认为 90 度，即圆心的正上方。0 度为圆心的正右方。</span><br><span class="line">    name:&#123;                      //雷达图每个指示器名称的配置项。</span><br><span class="line">        show:true,              //是否显示指示器名称。</span><br><span class="line">        formatter:function (value, indicator) &#123;  //用回调函数，第一个参数是指示器名称，第二个参数是指示器配置项</span><br><span class="line">            return &apos;【&apos; + value + &apos;】&apos;;</span><br><span class="line">        &#125;,</span><br><span class="line">        textStyle:mytextStyle</span><br><span class="line">    &#125;,</span><br><span class="line">    nameGap:15,                 //指示器名称和指示器轴的距离</span><br><span class="line">    splitNumber:5,              //指示器轴的分割段数</span><br><span class="line">    scale:false,                //只在数值轴中（type: &apos;value&apos;）有效。是否是脱离 0 值比例。设置成 true 后坐标刻度不会强制包含零刻度。在双数值轴的散点图中比较有用。在设置 min 和 max 之后该配置项无效。</span><br><span class="line">    shape:&quot;polygon&quot;,            //雷达图绘制类型，支持 &apos;polygon&apos; 和 &apos;circle&apos;。</span><br><span class="line">    silent:false,               //坐标轴是否是静态无法交互</span><br><span class="line">    triggerEvent:false,         //坐标轴的标签是否响应和触发鼠标事件</span><br><span class="line">    axisLine:&#123;                   //坐标 轴线</span><br><span class="line">        show:true,               //是否显示坐标轴轴线</span><br><span class="line">        onZero:true,            //X 轴或者 Y 轴的轴线是否在另一个轴的 0 刻度上，只有在另一个轴为数值轴且包含 0 刻度时有效</span><br><span class="line">        lineStyle:mylineStyle</span><br><span class="line">    &#125;,</span><br><span class="line">    axisTick :&#123;                 //坐标轴刻度相关设置</span><br><span class="line">        show:true,              //是否显示坐标轴刻度。</span><br><span class="line">        alignWithLabel:false,   //类目轴中在 boundaryGap 为 true 的时候有效，可以保证刻度线和标签对齐</span><br><span class="line">        interval:auto,          //坐标轴刻度的显示间隔，在类目轴中有效。默认会采用标签不重叠的策略间隔显示标签。可以设置成 0 强制显示所有标签。如果设置为 1，表示『隔一个标签显示一个标签』，如果值为 2，表示隔两个标签显示一个标签，以此类推</span><br><span class="line">        inside:false,           //坐标轴刻度是否朝内，默认朝外。</span><br><span class="line">        length:5,               //坐标轴刻度的长度。</span><br><span class="line">        lineStyle:mylineStyle //</span><br><span class="line">    &#125;,</span><br><span class="line">    axisLabel:&#123;                 //坐标轴刻度标签的相关设置</span><br><span class="line">        show:true,              //是否显示</span><br><span class="line">        interval:&quot;auto&quot;,        //坐标轴刻度标签的显示间隔，在类目轴中有效。默认会采用标签不重叠的策略间隔显示标签。可以设置成 0 强制显示所有标签。如果设置为 1，表示『隔一个标签显示一个标签』，如果值为 2，表示隔两个标签显示一个标签，以此类推</span><br><span class="line">        inside:false,           //刻度标签是否朝内，默认朝外</span><br><span class="line">        rotate:0,               //刻度标签旋转的角度，在类目轴的类目标签显示不下的时候可以通过旋转防止标签之间重叠。旋转的角度从 -90 度到 90 度</span><br><span class="line">        margin:8,               //刻度标签与轴线之间的距离</span><br><span class="line">        formatter: function (value, index) &#123; //使用函数模板，函数参数分别为刻度数值（类目），刻度的索引</span><br><span class="line">            return value+&quot;kg&quot;;</span><br><span class="line">        &#125;,</span><br><span class="line">        showMinLabel:null,      //是否显示最小 tick 的 label。可取值 true, false, null。默认自动判定（即如果标签重叠，不会显示最小 tick 的 label）</span><br><span class="line">        showMaxLabel:null,      //是否显示最大 tick 的 label。可取值 true, false, null。默认自动判定（即如果标签重叠，不会显示最大 tick 的 label）</span><br><span class="line">        textStyle:mytextStyle</span><br><span class="line">    &#125;,</span><br><span class="line">    splitLine:&#123;                 //坐标轴在 grid 区域中的分隔线。</span><br><span class="line">        show:true,               //是否显示分隔线。默认数值轴显示，类目轴不显示。</span><br><span class="line">        interval:&quot;auto&quot;,        //坐标轴分隔线的显示间隔，在类目轴中有效。默认会采用标签不重叠的策略间隔显示标签。可以设置成 0 强制显示所有标签。如果设置为 1，表示『隔一个标签显示一个标签』，可以用数值表示间隔的数据，也可以通过回调函数控制。回调函数格式如下：</span><br><span class="line">        lineStyle:mylineStyle</span><br><span class="line">    &#125;,</span><br><span class="line">    splitArea:&#123;                 //坐标轴在 grid 区域中的分隔区域，默认不显示。</span><br><span class="line">        interval:&quot;auto&quot;,</span><br><span class="line">        show:false,             //是否显示分隔区域</span><br><span class="line">        areaStyle:myareaStyle</span><br><span class="line">    &#125;,</span><br><span class="line">    indicator: [                //雷达图的指示器，用来指定雷达图中的多个变量（维度）</span><br><span class="line">        &#123; name: &apos;销售（sales）&apos;, max: 6500&#125;,</span><br><span class="line">        &#123; name: &apos;管理（Administration）&apos;, max: 16000&#125;,</span><br><span class="line">        &#123; name: &apos;信息技术（Information Techology）&apos;, max: 30000&#125;,</span><br><span class="line">        &#123; name: &apos;客服（Customer Support）&apos;, max: 38000&#125;,</span><br><span class="line">        &#123; name: &apos;研发（Development）&apos;, max: 52000&#125;,</span><br><span class="line">        &#123; name: &apos;市场（Marketing）&apos;, max: 25000&#125;</span><br><span class="line">    ],</span><br><span class="line">    zlevel:0,                   //所属图形的 zlevel 值。</span><br><span class="line">    z:0,                        //组件的所属图形的z值</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -475,6 +499,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ECharts/" rel="tag"><i class="fa fa-tag"></i>ECharts</a>
+          
+            <a href="/tags/地图/" rel="tag"><i class="fa fa-tag"></i>地图</a>
+          
+        </div>
       
 
       

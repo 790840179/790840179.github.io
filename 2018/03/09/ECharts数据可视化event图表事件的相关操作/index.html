@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ECharts,地图," />
 
 
 
@@ -100,17 +100,18 @@
 
 
 
-<meta name="description" content="风骚的走位">
+<meta name="description" content="event事件用于接收用户的相关事件和action触发的图表的行为。 图表行为用于触发能够改变图表显示的相关动态功能，event事件用于接收action触发的行为，所以action行为要配合event事件一块学习。 12345678910111213141516171819202122232425262728293031323334353637//在 ECharts 中主要通过 on 方法添加事件">
+<meta name="keywords" content="ECharts,地图">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ECharts数据可视化event图表事件的相关操作">
 <meta property="og:url" content="https://github.com/790840179/2018/03/09/ECharts数据可视化event图表事件的相关操作/index.html">
 <meta property="og:site_name" content="ZhouGuang&#39;s Notes">
-<meta property="og:description" content="风骚的走位">
+<meta property="og:description" content="event事件用于接收用户的相关事件和action触发的图表的行为。 图表行为用于触发能够改变图表显示的相关动态功能，event事件用于接收action触发的行为，所以action行为要配合event事件一块学习。 12345678910111213141516171819202122232425262728293031323334353637//在 ECharts 中主要通过 on 方法添加事件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T08:23:45.998Z">
+<meta property="og:updated_time" content="2018-03-13T02:58:07.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ECharts数据可视化event图表事件的相关操作">
-<meta name="twitter:description" content="风骚的走位">
+<meta name="twitter:description" content="event事件用于接收用户的相关事件和action触发的图表的行为。 图表行为用于触发能够改变图表显示的相关动态功能，event事件用于接收action触发的行为，所以action行为要配合event事件一块学习。 12345678910111213141516171819202122232425262728293031323334353637//在 ECharts 中主要通过 on 方法添加事件">
 
 
 
@@ -358,6 +359,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -390,7 +413,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  601
                 </span>
               
 
@@ -406,7 +429,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -427,7 +450,10 @@
       
 
       
-        
+        <p>event事件用于接收用户的相关事件和action触发的图表的行为。</p>
+<p>图表行为用于触发能够改变图表显示的相关动态功能，event事件用于接收action触发的行为，所以action行为要配合event事件一块学习。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">//在 ECharts 中主要通过 on 方法添加事件处理函数，该文档描述了所有 ECharts 的事件列表。</span><br><span class="line">//ECharts 中的事件分为两种，一种是鼠标事件，在鼠标点击某个图形上会触发，还有一种是 调用 dispatchAction 后触发的事件。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//==========================鼠标事件==============================</span><br><span class="line">//鼠标事件包括&apos;click&apos;，&apos;dblclick&apos;，&apos;mousedown&apos;，&apos;mouseup&apos;，&apos;mouseover&apos;，&apos;mouseout&apos;，&apos;globalout&apos;，&apos;contextmenu&apos;。</span><br><span class="line">//鼠标事件的事件参数是事件对象的数据的各个属性，具体见各个图表类型的 label formatter 回调函数的 params。</span><br><span class="line">myChart.on(&apos;click&apos;, function (params) &#123;</span><br><span class="line">    console.log(params);</span><br><span class="line">&#125;);</span><br><span class="line">//对于图表的点击事件，基本参数如下，其它图表诸如饼图可能会有部分附加参数。</span><br><span class="line">params=&#123;</span><br><span class="line">    componentType: string,      // 当前点击的图形元素所属的组件名称，// 其值如 &apos;series&apos;、&apos;markLine&apos;、&apos;markPoint&apos;、&apos;timeLine&apos; 等。</span><br><span class="line">    seriesType: string,         // 系列类型。值可能为：&apos;line&apos;、&apos;bar&apos;、&apos;pie&apos; 等。当 componentType 为 &apos;series&apos; 时有意义。</span><br><span class="line">    seriesIndex: number,        // 系列在传入的 option.series 中的 index。当 componentType 为 &apos;series&apos; 时有意义。</span><br><span class="line">    seriesName: string,         // 系列名称。当 componentType 为 &apos;series&apos; 时有意义。</span><br><span class="line">    name: string,                // 数据名，类目名</span><br><span class="line">    dataIndex: number,          // 数据在传入的 data 数组中的 index</span><br><span class="line">    data: Object,                 // 传入的原始数据项</span><br><span class="line">    // sankey、graph 等图表同时含有 nodeData 和 edgeData 两种 data，</span><br><span class="line">    // dataType 的值会是 &apos;node&apos; 或者 &apos;edge&apos;，表示当前点击在 node 还是 edge 上。</span><br><span class="line">    // 其他大部分图表中只有一种 data，dataType 无意义。</span><br><span class="line">    dataType: string,</span><br><span class="line">    value: number|Array         // 传入的数据值</span><br><span class="line">    color: string               // 数据图形的颜色。当 componentType 为 &apos;series&apos; 时有意义。</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//==========================action事件的响应函数==============================</span><br><span class="line">//type就是action中的type，在action执行完毕后触发响应函数，响应函数的params中包含的属性就是触发action时添加的属性</span><br><span class="line">myChart.on(type, function (params) &#123;</span><br><span class="line">    console.log(params);        //params中包含的属性就是触发action时添加的属性</span><br><span class="line">&#125;);</span><br><span class="line">//例如触发legendSelect选中图例时，会添加name属性，则使用以下函数设置回调函数</span><br><span class="line">myChart.on(&apos;legendselectchanged&apos;, function (params) &#123;</span><br><span class="line">    console.log(params.name);   //读取触发时添加的属性</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -475,6 +501,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ECharts/" rel="tag"><i class="fa fa-tag"></i>ECharts</a>
+          
+            <a href="/tags/地图/" rel="tag"><i class="fa fa-tag"></i>地图</a>
+          
+        </div>
       
 
       
