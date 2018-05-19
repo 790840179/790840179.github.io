@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[2018日志]]></title>
     <url>%2F2018%2F05%2F16%2F2018%E6%97%A5%E5%BF%97%2F</url>
-    <content type="text"><![CDATA[2.5 12调入能源管理组app开发事宜，挺好 3.1 1搬入B4-409 3.9 1echarts地图绘制 3.15 1android学习开始 4.16-4.20 123佛山出差，可视化项目，涉及接口事宜什么玩意儿，不开心PS:杨妈身体有恙，很冲突，烦躁 4.24-4.27 123石家庄出差，河北实物资产管理项目，OSP环境搭建、测试数据库导入OK，主力，现场环境相对比较复杂，解决问题PS:杨妈身体有恙，很冲突，烦躁 4.29 1回苏州，吴江第一人民医院，杨妈身体情况不确定 5.2-5.6 123石家庄出差，服务端与PMS2.0台账信息查询、服务转发等接口调试OK，辅助作用，协调沟通，解决问题PS:杨妈身体有恙，很冲突，烦躁 5.10 12arduino开始HZWL代码查看开始 5.12 1回苏州，苏州大学附属第二医院，杨妈情况相对好转]]></content>
+    <content type="text"><![CDATA[2.5 12调入能源管理组app开发事宜，挺好 3.1 1搬入B4-409 3.9 1echarts地图绘制 3.15 1android学习开始 4.16-4.20 123佛山出差，可视化项目，涉及接口事宜什么玩意儿，不开心PS:杨妈身体有恙，很冲突，烦躁 4.24-4.27 123石家庄出差，河北实物资产管理项目，OSP环境搭建、测试数据库导入OK，主力，现场环境相对比较复杂，解决问题PS:杨妈身体有恙，很冲突，烦躁 4.29 1回苏州，吴江第一人民医院，杨妈身体情况不确定 5.2-5.6 123石家庄出差，服务端与PMS2.0台账信息查询、服务转发等接口调试OK，辅助，协调沟通，解决问题PS:杨妈身体有恙，很冲突，烦躁 5.10 12arduino开始HZWL代码查看开始 5.12 1回苏州，苏州大学附属第二医院，杨妈情况相对好转 5.16 1一建机电开始，四个月希望拿下，加油]]></content>
       <categories>
         <category>日常</category>
       </categories>
@@ -48,8 +48,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[关于JS的Ajax方法导致跨域问题的解决办法1]]></title>
-    <url>%2F2018%2F02%2F11%2F%E5%85%B3%E4%BA%8EJS%E7%9A%84Ajax%E6%96%B9%E6%B3%95%E5%AF%BC%E8%87%B4%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%951%2F</url>
+    <title><![CDATA[关于JS的Ajax方法导致跨域问题的解决办法]]></title>
+    <url>%2F2018%2F02%2F11%2F%E5%85%B3%E4%BA%8EJS%E7%9A%84Ajax%E6%96%B9%E6%B3%95%E5%AF%BC%E8%87%B4%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[Cross origin requests are only supported for protocol schemes: http, data, chrome-extension-resource.报错处理以上错误提示是由于ajax方法涉及到跨域问题导致 由于没有在服务器环境里运行含有ajax方法的页面，而是直接通过浏览器打开(类似file:///的访问形式，即file协议) 本地页面ajax()请求本地页面，须通过服务器环境运行，类似1http://127.0.0.1:8888/EXP99.COM/index.html 远程服务器如果是在远程服务器ajax()请求外域服务器里的页面，即使通过服务器环境运行也会报跨域的错误，此时需要通过JSONP的形式！ JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问问题。 JSONP示例： 12345678910111213$.ajax(&#123; type:&quot;get&quot;, async:false, url:&quot;http://app.example.com/base/json.do?sid=1494&amp;busild=101&quot;, dataType:&quot;jsonp&quot;, jsonp:&quot;jsonpCallback&quot;, success:function(data)&#123; $(&quot;#myID&quot;).text(&quot;Result&quot;+data.result) &#125;, error:function()&#123; alert(&apos;fail&apos;); &#125;&#125;); 本地浏览方案一 1.关闭所有打开的Chrome(重要)，否则没有效果 2.创建Chrome快捷方式，修改快捷方式的目标为(注意中间空格) 1C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --disable-web-security 若禁止修改，选择Chrome常规选项，去除“只读”属性 3.必须重启电脑，否则无效，若方案一无效，继续执行方案二 方案二 1.使用cmd命令，传入浏览器启动参数 –allow-file-access-from-files 123&quot;C:\Program Files (x86)\Google\Chrome\Application\chrome.exe&quot; --allow-file-access-from-files或者C:\Program Files (x86)\Google\Chrome\Application&gt;chrome.exe --allow-file-access-from-files]]></content>
       <categories>
         <category>技术</category>
@@ -64,7 +64,13 @@
   <entry>
     <title><![CDATA[2018书单]]></title>
     <url>%2F2018%2F02%2F07%2F2018%E4%B9%A6%E5%8D%95%2F</url>
-    <content type="text"><![CDATA[hexo插入图片功能还没有搞定额！]]></content>
+    <content type="text"><![CDATA[每天浪浪浪，真实太简单了，可以看足球，看综艺，看小视频，看美剧…，但是，其实人生还是可以… 2018，做更多有意义的事情，读书，健身，学习，考试，一个都不能少。 《富爸爸，穷爸爸》于2018.3.2读完 《小狗钱钱》于2018.3.16读完 《第一行代码》于2018.4.13读完 《美国种族简史》于2018.5.19读完 持续更新…]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>2018，书单</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[react组件生命周期]]></title>
